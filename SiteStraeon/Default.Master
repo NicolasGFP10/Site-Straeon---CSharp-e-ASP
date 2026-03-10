@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="SiteStraeon.Default" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Straeon</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="img/straeonIcon.png" type="image/ x-ico" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Usuário logado -->
+            <asp:HyperLink ID="buttonEditarInformacoes" runat="server" NavigateUrl="~/Perfil.aspx" CssClass="user-info" Visible="false">
+                <asp:Image ID="imgUsuario" runat="server" />
+                <asp:Label ID="usuNome" runat="server" Text=""></asp:Label>
+            </asp:HyperLink>
+
+            <!-- Botões de login/cadastro -->
+            <asp:HyperLink CssClass="sidebar-link" ID="buttonLogar" NavigateUrl="~/Login.aspx" runat="server" Visible="true">
+                <i class="fa fa-sign-in"></i> Entrar
+            </asp:HyperLink>
+
+            <asp:HyperLink CssClass="sidebar-link" ID="buttonCadastrar" NavigateUrl="~/Cadastro.aspx" runat="server" Visible="true">
+                <i class="fa fa-user-plus"></i> Cadastrar
+            </asp:HyperLink>
+
+            <asp:LinkButton ID="buttonDeslogar" OnClick="buttonDeslogar_Click" runat="server" CssClass="sidebar-link" Visible="false">
+                <i class="fa fa-sign-out"></i> Sair
+            </asp:LinkButton>
+
+            <!-- Navegação principal -->
+            <asp:HyperLink CssClass="sidebar-link" ID="buttonHome" NavigateUrl="~/Default.aspx" runat="server" Visible="true">
+                <i class="fa fa-home"></i> Home
+            </asp:HyperLink>
+
+            <asp:HyperLink CssClass="sidebar-link" ID="buttonPesquisar" NavigateUrl="~/Pesquisar.aspx" runat="server" Visible="true">
+                <i class="fa fa-search"></i> Pesquisar
+            </asp:HyperLink>
+
+            <asp:HyperLink CssClass="sidebar-link" ID="buttonLivrosSalvos" NavigateUrl="~/LivrosSalvos.aspx" runat="server" Visible="false">
+                <i class="fa fa-bookmark"></i> Livros Salvos
+            </asp:HyperLink>
+
+            <asp:HyperLink CssClass="sidebar-link" ID="buttonAtualizarConta" NavigateUrl="~/AtualizarConta.aspx" runat="server" Visible="false">
+                <i class="fa fa-user"></i> Atualizar Conta
+            </asp:HyperLink>
+
+            <asp:HyperLink CssClass="sidebar-link" ID="buttonPublicar" NavigateUrl="~/Publicar.aspx" runat="server" Visible="false">
+                <i class="fa fa-upload"></i> Publicar
+            </asp:HyperLink>
+
+            <asp:HyperLink CssClass="sidebar-link" ID="buttonLivrosCadastrados" NavigateUrl="~/LivrosCadastrados.aspx" runat="server" Visible="false">
+                <i class="fa fa-archive"></i> Livros Cadastrados
+            </asp:HyperLink>
+
+            <center><h4 style="color: #fff; padding-top: 300%;">&copy; 2025 Straeon</h4></center>
+            
+        </div>
+
+        <!-- Conteúdo principal -->
+        <div class="main-content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
